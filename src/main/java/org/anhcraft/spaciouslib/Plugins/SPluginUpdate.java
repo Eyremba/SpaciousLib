@@ -20,10 +20,10 @@ public class SPluginUpdate {
         SPlugin.disablePlugin(p);
         SPlugin.unloadPlugin(p);
         if(URLUtils.download(fileurl, "plugins/" + newfile, r)) {
-            SPlugin.enablePlugin(SPlugin.loadPlugin(newfile.replace(".jar","")));
             if(oldfile.exists()){
                 oldfile.delete();
             }
+            SPlugin.enablePlugin(SPlugin.loadPlugin(newfile.replace(".jar","")));
         }
     }
 }
